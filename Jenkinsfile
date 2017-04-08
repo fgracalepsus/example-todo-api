@@ -5,7 +5,7 @@ node('php'){
     }
     
     stage('Fetch') {
-        git 'https://github.com/jeffersonsouza/example-todo-api.git'
+        git 'https://github.com/fgracalepsus/example-todo-api.git'
     }
     
     stage('Build'){
@@ -15,10 +15,10 @@ node('php'){
     }
     
     stage('Docker Build') {
-        sh 'sudo docker build -t jeffersonsouza/todoapi:$BUILD_NUMBER .'
+        sh 'sudo docker build -t fgraca/todoapi:$BUILD_NUMBER .'
     }
     
     stage('Docker Ship') {
-        sh 'sudo docker push jeffersonsouza/todoapi:$BUILD_NUMBER'
+        sh 'sudo docker push fgraca/todoapi:$BUILD_NUMBER'
     }
 }
