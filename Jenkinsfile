@@ -20,5 +20,6 @@ node('php'){
     
     stage('Docker Ship') {
         sh 'sudo docker push fgraca/todoapi:$BUILD_NUMBER'
+        sh 'sudo docker push fgraca/todoapi:latest'
     }
 }
